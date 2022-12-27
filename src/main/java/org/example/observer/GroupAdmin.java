@@ -34,6 +34,7 @@ public class GroupAdmin implements Sender {
     @Override
     public void register(Member obj) {
         if (obj == null) return;
+        obj.update(usb);
         memberList.add(obj);
     }
 
@@ -50,9 +51,9 @@ public class GroupAdmin implements Sender {
     /**
      * insert a new string into the existing one.
      * updates the members about the change.
+     *
      * @param offset the index from where to insert the new string.
      * @param obj    the string to insert.
-     *
      */
     @Override
     public void insert(int offset, String obj) {
@@ -63,6 +64,7 @@ public class GroupAdmin implements Sender {
     /**
      * appends a new string to the existing one.
      * updates the members about the change.
+     *
      * @param obj: the string that you want to append to the existing string of the stringBuilder.
      */
     @Override
@@ -74,6 +76,7 @@ public class GroupAdmin implements Sender {
     /**
      * delete a part of the existing string.
      * updates the members about the change.
+     *
      * @param start The beginning index.
      * @param end   The end index.
      */
@@ -93,7 +96,6 @@ public class GroupAdmin implements Sender {
         usb.undo();
         update();
     }
-
 
 
     /**
