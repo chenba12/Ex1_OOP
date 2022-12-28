@@ -108,4 +108,8 @@ public class GroupAdmin implements Sender {
         }
     }
 
+    @Override
+    public String toString() {
+        return usb.toString();
+    }
 }

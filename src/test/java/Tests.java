@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 public class Tests {
     private UndoableStringBuilder usb;
     private GroupAdmin groupAdmin;
-    public static final Logger logger=LoggerFactory.getLogger(Tests.class);
+    public static final Logger logger = LoggerFactory.getLogger(Tests.class);
 
     @Before
     public void init() {
@@ -28,15 +28,16 @@ public class Tests {
         groupAdmin = new GroupAdmin();
         usb = groupAdmin.getUsb();
         logger.info(() -> JvmUtilities.objectFootprint(groupAdmin));
-        ConcreteMember cm1=new ConcreteMember(groupAdmin.getUsb(), "chen");
+        ConcreteMember cm1 = new ConcreteMember(groupAdmin.getUsb(), "chen");
         groupAdmin.register(cm1);
         groupAdmin.register(new ConcreteMember(groupAdmin.getUsb(), "or"));
         groupAdmin.register(new ConcreteMember(groupAdmin.getUsb(), "amit"));
         logger.info(() -> JvmUtilities.objectFootprint(groupAdmin));
         groupAdmin.append("Hello");
         logger.info(() -> JvmUtilities.objectFootprint(groupAdmin));
-        logger.info(() -> "Concrete member info: "+JvmUtilities.objectFootprint(cm1));
-        logger.info(() -> "Group admin info: "+JvmUtilities.objectFootprint(groupAdmin));
+        logger.info(() -> JvmUtilities.objectTotalSize(groupAdmin, cm1));
+        logger.info(() -> "Concrete member info: " + JvmUtilities.objectFootprint(cm1));
+        logger.info(() -> "Group admin info: " + JvmUtilities.objectFootprint(groupAdmin));
 
     }
 
