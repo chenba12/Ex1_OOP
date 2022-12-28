@@ -13,13 +13,13 @@ interface Action{
 public class UndoableStringBuilder {
 
 
-    private StringBuilder stringBuilder; // delegate
+    private final StringBuilder stringBuilder; // delegate
     /**
      * Operations that are the reverse of those performed.
      * That is, when append is called, it is placed on the stack
      * "delete" operation. When calling undo() it
      * will be executed.    */
-    private Stack<Action> actions = new Stack<>();
+    private final Stack<Action> actions = new Stack<>();
 
     // constructor
     public UndoableStringBuilder() {
