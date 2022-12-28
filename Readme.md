@@ -1,3 +1,7 @@
+To run this project;
+clone/download this repository and once you have the repository on your computer open it up in an IDE,
+go to the test/java folder and open the Tests.java class and press run.
+
 We implemented the design pattern Observer as follows:
 ConcreteMember-a class that represents a type of Member that implements the Member interface.
 The class holds 2 data members String name and UndoableStringBuilder usb.
